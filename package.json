@@ -1,0 +1,26 @@
+{
+  "name": "instill",
+  "version": "0.0.1",
+  "description": "Create code with dependency injection.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wizcorp/instill.git"
+  },
+  "keywords": [
+    "dependency",
+    "injection"
+  ],
+  "author": "Marc Trudel <mtrudel@wizcorp.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wizcorp/instill/issues"
+  },
+  "homepage": "https://github.com/Wizcorp/instill#readme",
+  "dependencies": {
+    "deep-copy": "^1.1.2"
+  }
+}

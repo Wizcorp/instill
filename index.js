@@ -1,6 +1,7 @@
 const deepCopy = require('deep-copy')
+const proxy = require('munchausen')
 
-module.exports = function (exports, deps = {}, classes = {}) {
+module.exports = function (exports, deps = {}, classes = {}, onWith) {
   exports.modules = deps
   exports.classes = classes
 
@@ -19,6 +20,10 @@ module.exports = function (exports, deps = {}, classes = {}) {
     Object.keys(injectedModules).forEach(function (key) {
       cloned.use(key, injectedModules[key])
     })
+
+    if (onWith) {
+      cloned = onWith(cloned)
+    }
 
     callback(cloned)
   }

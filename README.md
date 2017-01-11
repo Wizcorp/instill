@@ -3,7 +3,7 @@ instill
 
 ![Logo](./logo.png)
 
-The smallest dependency injection framework for Node.js.
+The littlest dependency injection framework for Node.js.
 
 API
 ---

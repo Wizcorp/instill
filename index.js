@@ -17,6 +17,12 @@ module.exports = function (exports, deps = {}, classes = {}, onWith) {
     const self = this
     let cloned = deepCopy(exports)
 
+    if (typeof exports === 'function') {
+      cloned = Object.assign(function (...args) {
+        exports.apply(cloned, args)
+      }, cloned)
+    }
+
     Object.keys(injectedModules).forEach(function (key) {
       cloned.use(key, injectedModules[key])
     })

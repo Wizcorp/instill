@@ -2,8 +2,15 @@ const deepCopy = require('deep-copy')
 const proxy = require('munchausen')
 
 module.exports = function (exports, deps = {}, classes = {}, onWith) {
-  exports.modules = deps
-  exports.classes = classes
+  Object.defineProperty(exports, 'modules', {
+    value: deps,
+    enumerable: false
+  })
+
+  Object.defineProperty(exports, 'classes', {
+    value: classes,
+    enumerable: false
+  })
 
   exports.use = function (name, moduleObject) {
     if (!this.modules[name]) {
